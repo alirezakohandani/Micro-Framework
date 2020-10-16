@@ -4,11 +4,13 @@ return array(
     '/' => [
         'target' => 'HomeController@index'
     ],
-    'auth/login' => [
-        'target' => 'AuthController@login'
+    '/auth/login' => [
+        'method' => 'get|post',
+        'target' => 'AuthController@login',
+        'middleware' => 'AuthMiddleware@handle'
        
     ],
-    'auth/register' => [
+    '/auth/register' => [
         'target' => 'AuthController@register'
     ]
 );

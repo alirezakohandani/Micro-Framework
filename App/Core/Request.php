@@ -26,7 +26,7 @@ class Request
 //          foreach($keys as $key) {
 //               $this->{$key} = $this->param($key);
 //              }
-        $this->method = $_SERVER['REQUEST_METHOD'];
+        $this->method = strtolower($_SERVER['REQUEST_METHOD']);
         $this->uri = $_SERVER['REQUEST_URI'];
         $this->ip = $_SERVER['REMOTE_ADDR'];
         $this->agent = $_SERVER['HTTP_USER_AGENT'];
@@ -37,7 +37,9 @@ class Request
     public function key_exists($key) {
         return in_array($key, array_keys($this->params));
     }
-
+    public function is_in($methods_arr) {
+        return in_array($this->method, $methods_arr);
+    }
     public function param($key) {
         return $this->params[$key];
     }
