@@ -2,15 +2,19 @@
 
 return array(
     '/' => [
-        'target' => 'HomeController@index'
+        'method' => 'get',
+        'target' => 'HomeController@index',
+        'middleware' => ''
     ],
     '/auth/login' => [
         'method' => 'get|post',
         'target' => 'AuthController@login',
-        'middleware' => 'AuthMiddleware@handle'
+        'middleware' => 'IEBlocker'
        
     ],
     '/auth/register' => [
+        'method' => 'get|post',
         'target' => 'AuthController@register'
+        
     ]
 );
