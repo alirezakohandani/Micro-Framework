@@ -2,9 +2,17 @@
 
 namespace App\Services\View;
 
-class View {
-    //load template
-    public static function load($view, $data = array()) {
+class View 
+{
+    /**
+     * Load template
+     *
+     * @param string $view
+     * @param array $data
+     * @return void
+     */
+    public static function load($view, $data = array()) 
+    {
         $view = str_replace('.', DIRECTORY_SEPARATOR, $view);
         $full_view_path = BASE_VIEW_PATH . $view . ".php";
   

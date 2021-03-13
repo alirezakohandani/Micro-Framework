@@ -17,7 +17,7 @@ class IEBlocker extends BaseMiddleware
     {
         $agentKey = 'Trident/'; 
         if (stripos($request->agent, $agentKey) !==false) {
-            echo "Sorry, IE was Blocked";
+            echo "Sorry, IE was blocked";
             die();
         }
     }

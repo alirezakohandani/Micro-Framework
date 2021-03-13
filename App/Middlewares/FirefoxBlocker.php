@@ -17,7 +17,7 @@ class FirefoxBlocker extends BaseMiddleware
     {
         $agentKey = 'Gecko/'; 
         if (stripos($request->agent, $agentKey) !==false) {
-            echo "Sorry, firefox was Blocked";
+            echo "Sorry, firefox was blocked";
             die();
         }
     }

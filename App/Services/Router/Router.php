@@ -7,7 +7,6 @@ use App\Services\View\View;
 
 class Router
 {
-
     const baseController = "App\Controllers\\";
     const baseMiddlewares = 'App\Middlewares\\';
 
@@ -28,17 +27,17 @@ class Router
                 View::load('errors.403');
                 die();
              }
-             //chechk middleware
+             
              if (self::has_middleware($current_uri)) {
              $middlewares = self::get_route_middlewares($current_uri);
                 foreach ($middlewares as $middleware) {
                     $middlewareClass = self::baseMiddlewares . $middleware;
                         if (!class_exists($middlewareClass)) {
-                        echo "Error: Class $middlewareClass was not found!";
-                        die();
+                            echo "Error: Class $middlewareClass was not found!";
+                            die();
                     }
-                        $middlewareObj = new $middlewareClass;
-                        $middlewareObj->handle($request);
+                            $middlewareObj = new $middlewareClass;
+                            $middlewareObj->handle($request);
                 }
              }
 
@@ -60,14 +59,9 @@ class Router
             $controller_object->$method($request);
             } else {
                 header("HTTP/1.0 404 Not Found");
-                // View::load('errors/404');
                 view::load('errors.404');
                 die();
             }
-        // if route not exists : 404.php
-        // get route target (Controller & Method)
-        // create an object from target Controller and call the method (ghesmate 1 dakhele shekle loghman)
-        //
     }
 
     /**
@@ -136,7 +130,6 @@ class Router
             return removeEmptyMembers(explode('|', $middlewareStr));
         }
             return null;
-        
     }
 
     /**
@@ -145,7 +138,7 @@ class Router
      * @param string $route
      * @return boolean
      */
-    public static function has_middleware ($route) {
+    public static function has_middleware($route) {
         $routes = self::get_all_routes();
         return isset($routes[$route]['middleware']) or !empty(GLOBAL_MIDDLEWARES);
        
