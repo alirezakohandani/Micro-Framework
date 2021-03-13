@@ -5,12 +5,16 @@ namespace App\Middlewares;
 use App\Core\Request;
 use App\Middlewares\Contract\BaseMiddleware;
 
-//block request if come from Firefox browser
 class FirefoxBlocker extends BaseMiddleware 
 {
+    /**
+     * block request if come from firefox browser
+     *
+     * @param Request $request
+     * @return void
+     */
     public function handle(Request $request)
     {
-       
         $agentKey = 'Gecko/'; 
         if (stripos($request->agent, $agentKey) !==false) {
             echo "Sorry, firefox was Blocked";

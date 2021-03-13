@@ -8,7 +8,6 @@ use App\Services\View\View;
 class Router
 {
 
-    private static $routes;
     const baseController = "App\Controllers\\";
     const baseMiddlewares = 'App\Middlewares\\';
 
@@ -42,30 +41,29 @@ class Router
                         $middlewareObj->handle($request);
                 }
              }
-           
-             //call controller method
+
             $targetStr = self::get_route_target($current_uri);
             list($controller, $method) = explode('@', $targetStr);
             $controller = self::baseController . $controller;
-            //defensive programming
+    
             if (!class_exists($controller)) {
-                //error for programmer
                 echo "class $controller was not found";
                 die();
             }
+               
             $controller_object = new $controller;
             if (!method_exists($controller_object, $method)) {
                 echo "Error: Method $method was not found in $controller";
                 die();
-            
             }
+            
             $controller_object->$method($request);
-        } else {
-            header("HTTP/1.0 404 Not Found");
-            // View::load('errors/404');
-            view::load('errors.404');
-            die();
-        }
+            } else {
+                header("HTTP/1.0 404 Not Found");
+                // View::load('errors/404');
+                view::load('errors.404');
+                die();
+            }
         // if route not exists : 404.php
         // get route target (Controller & Method)
         // create an object from target Controller and call the method (ghesmate 1 dakhele shekle loghman)
