@@ -44,6 +44,10 @@ class ComposerStaticInit69344fc9fd2b7316a601e40c78af438d
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Container\\' => 14,
         ),
+        'M' => 
+        array (
+            'Medoo\\' => 6,
+        ),
         'I' => 
         array (
             'Illuminate\\Validation\\' => 22,
@@ -134,6 +138,10 @@ class ComposerStaticInit69344fc9fd2b7316a601e40c78af438d
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'Medoo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/catfan/medoo/src',
+        ),
         'Illuminate\\Validation\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/validation',
@@ -193,6 +201,7 @@ class ComposerStaticInit69344fc9fd2b7316a601e40c78af438d
     public static $classMap = array (
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'DivisionByZeroError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
         'Error' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/Error.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
