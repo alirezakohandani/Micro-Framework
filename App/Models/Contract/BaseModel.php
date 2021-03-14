@@ -48,7 +48,7 @@ class BaseModel implements CRUD
      */
     public function read($columns = '*', $where = array())
     {
-        return $this->Conn->select(static::$table, $columns, $where);
+        return $this->conn->select(static::$table, $columns, $where);
     }
 
     /**
