@@ -315,23 +315,23 @@
         },
         {
             "name": "hekmatinasser/verta",
-            "version": "v1.11",
+            "version": "v1.11.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hekmatinasser/verta.git",
-                "reference": "babfe7b86132aa4993f9cd050b9eaf6e0d5a4d1e"
+                "reference": "2aa9685b169806949f4c8780a730455c3787ed65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hekmatinasser/verta/zipball/babfe7b86132aa4993f9cd050b9eaf6e0d5a4d1e",
-                "reference": "babfe7b86132aa4993f9cd050b9eaf6e0d5a4d1e",
+                "url": "https://api.github.com/repos/hekmatinasser/verta/zipball/2aa9685b169806949f4c8780a730455c3787ed65",
+                "reference": "2aa9685b169806949f4c8780a730455c3787ed65",
                 "shasum": ""
             },
             "require": {
                 "hekmatinasser/notowo": "^1.0",
                 "illuminate/support": "^5|^6|^7|^8",
                 "illuminate/validation": "^5|^6|^7|^8",
-                "php": "^7.2.5"
+                "php": "^7.2.5|^8.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
@@ -375,7 +375,11 @@
                 "laravel",
                 "shamsi"
             ],
-            "time": "2020-09-08T18:47:56+00:00"
+            "support": {
+                "issues": "https://github.com/hekmatinasser/verta/issues",
+                "source": "https://github.com/hekmatinasser/verta/tree/v1.11.8"
+            },
+            "time": "2021-01-13T13:43:42+00:00"
         },
         {
             "name": "illuminate/collections",
