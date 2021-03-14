@@ -46,7 +46,7 @@ class BaseModel implements CRUD
      * @param array $where
      * @return void
      */
-    public function read($columns, $where)
+    public function read($columns = '*', $where = array())
     {
         return $this->Conn->select(static::$table, $columns, $where);
     }
@@ -82,7 +82,7 @@ class BaseModel implements CRUD
      * @param string $where
      * @return void
      */
-    public function count($where)
+    public function count($where = array())
     {
         return $this->conn->count(static::$table, $where);
     }

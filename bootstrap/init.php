@@ -7,4 +7,4 @@ if(IS_DEV_MODE) {
     ini_set('display_errors', 1);
 }
 
-new Medoo(config('database'));
+$medoo = new Medoo(config('database'));
