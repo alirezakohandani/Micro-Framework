@@ -86,4 +86,9 @@ class BaseModel implements CRUD
     {
         return $this->conn->count(static::$table, $where);
     }
+
+    public function query($query)
+    {
+        return $this->conn->query($query);
+    }
 }
