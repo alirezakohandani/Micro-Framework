@@ -1,7 +1,7 @@
 <?php
 
 function config($name) {
-    return include "../configs/$name.php";
+    return include BASE_PATH . "configs/$name.php";
 }
 
 function removeEmptyMembers($array) {

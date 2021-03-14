@@ -60,7 +60,8 @@ class BaseModel implements CRUD
      */
     public function update($data, $where)
     {
-        return $this->conn->update(static::$table, $data, $where);
+        $result = $this->conn->update(static::$table, $data, $where);
+        return $result->rowCount();
     }
 
     /**
@@ -71,7 +72,8 @@ class BaseModel implements CRUD
      */
     public function delete($where)
     {
-        return $this->conn->delete(static::$table, $where);
+        $result = $this->conn->delete(static::$table, $where);
+        return $result->rowCount();
     }
 
     /**
